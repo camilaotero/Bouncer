@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete Party
+{% endblock %}
+
+{% block main %}
+    <p class="text">Be careful, once you delete your party, it will delete all the invitations</p>
+    <form action="/delete" method="post">
+        <div class="mb-3">
+            <select class="form-select mx-auto w-auto" name="party_name" value=select>
+                <option disabled selected>Select a Party</option>
+                {% for i in range (0, length) %}
+                    <option name="party_name" select>
+                    {{party_list[i]}}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Delete</button>
+    </form>
+{% endblock %}

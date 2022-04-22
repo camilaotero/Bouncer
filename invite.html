@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Invite
+{% endblock %}
+
+{% block main %}
+    <form action="/invite" method="post">
+        <div class="mb-3">
+            <select class="form-select mx-auto w-auto" name="party_name" value=select>
+                <option disabled selected>Select a Party</option>
+                {% for i in range (0, length) %}
+                    <option name="party_name" select>
+                    {{party_list[i]}}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <p class="text">Enter invitee username</p>
+            <p class="smalltext">(Separate them by commas when entering multiple)</p>
+        </div>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="inivitee_username" name="inivitee_username" placeholder="Invitee Username" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Invite</button>
+    </form>
+{% endblock %}

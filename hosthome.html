@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Host Home Page
+{% endblock %}
+
+{% block main %}
+
+<body>
+    <main class="container py-5 text-center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-start">Party Name</th>
+                <th class="text-end">Start Date</th>
+                <th class="text-end">Start Time</th>
+                <th class="text-end">End Date</th>
+                <th class="text-end">End Time</th>
+                <th class="text-end">Venue</th>
+                <th class="text-end">Listed or Not</th>
+                <th class="text-end">Other Details</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for party_info in party_info %}
+            <tr>
+                <td class="text-start">{{ party_info.party_name }}</td>
+                <td class="text-end">{{ party_info.start_date }}</td>
+                <td class="text-end">{{ party_info.start_time }}</td>
+                <td class="text-end">{{ party_info.end_date }}</td>
+                <td class="text-end">{{ party_info.end_time }}</td>
+                <td class="text-end">{{ party_info.venue }}</td>
+                <td class="text-end">{{ party_info.listed }}</td>
+                <td class="text-end">{{ party_info.other_details }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <form action="/invite">
+        <input type="submit" value="Invite"/>
+    </form>
+    <br>
+    <form action="/partyplanner">
+        <input type="submit" value="Create a Party!"/>
+    </form>
+    <br>
+    <form action="/delete">
+        <input type="submit" value="Delete a Party"/>
+    </form>
+    </main>
+</body>
+
+{% endblock %}

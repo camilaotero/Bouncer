@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Party Planner
+{% endblock %}
+
+{% block main %}
+    <form action="/partyplanner" method="post">
+        <div class="mb-3">
+        <p class="text">Party Name:</p>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="party_name" name="party_name" placeholder="Party name" type="text">
+        </div>
+        <div class="mb-3">
+        <p class="text">Start Date:</p>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="start_date" name="start_date" placeholder="Start date" type="date">
+        </div>
+        <div class="mb-3">
+        <p class="text">Start Time:</p>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="start_time" name="start_time" placeholder="Start time" type="time">
+        </div>
+        <div class="mb-3">
+        <p class="text">End Date:</p>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="end_date" name="end_date" placeholder="End date" type="date">
+        </div>
+        <div class="mb-3">
+        <p class="text">End Time:</p>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="end_time" name="end_time" placeholder="End time" type="time">
+        </div>
+        <p class="text">Venue:</p>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="venue" name="venue" placeholder="Venue" type="text">
+        </div>
+        <p class="text">Listed or Not?</p>
+        <div class="mb-3">
+        <select class="form-select mx-auto w-auto" id="listed" name="listed" value=selected>
+            <option name="yes" value="Listed">Listed</option>
+            <option name="yes" value="Unlisted">Unlisted</option>
+        </select>
+        </div>
+        <p class="text">Other Details:</p>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="other_details" name="other_details" placeholder="Other details" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}

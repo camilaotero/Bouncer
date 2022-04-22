@@ -1,0 +1,14 @@
+---
+:id: 104741309
+:submitters:
+- :name: Camila Otero
+  :email: camila.otero@yale.edu
+- :name: Tetsu Kurumisawa
+  :email: tetsu.kurumisawa@yale.edu
+:created_at: !ruby/object:ActiveSupport::TimeWithZone
+  utc: 2021-12-13 01:32:18.113918000 Z
+  zone: !ruby/object:ActiveSupport::TimeZone
+    name: America/Los_Angeles
+  time: 2021-12-12 17:32:18.113918000 Z
+:status: processed
+:score: 19.75

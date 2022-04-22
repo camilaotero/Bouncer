@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Partyer Home Page
+{% endblock %}
+
+{% block main %}
+
+<body>
+
+    <main class="container py-5 text-center">
+    <p class="text">Invited listed parties</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-start">Party Name</th>
+                <th class="text-end">Start Date</th>
+                <th class="text-end">Start Time</th>
+                <th class="text-end">End Date</th>
+                <th class="text-end">End Time</th>
+                <th class="text-end">Venue</th>
+                <th class="text-end">Listed/Unlisted</th>
+                <th class="text-end">Other Details</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for listed_parties in listed_parties %}
+            <tr>
+                <td class="text-start">{{ listed_parties.party_name }}</td>
+                <td class="text-end">{{ listed_parties.start_date }}</td>
+                <td class="text-end">{{ listed_parties.start_time }}</td>
+                <td class="text-end">{{ listed_parties.end_date }}</td>
+                <td class="text-end">{{ listed_parties.end_time }}</td>
+                <td class="text-end">{{ listed_parties.venue }}</td>
+                <td class="text-end">{{ listed_parties.listed }}</td>
+                <td class="text-end">{{ listed_parties.other_details }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <p class="text">Unlisted Parties</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-start">Party Name</th>
+                <th class="text-end">Start Date</th>
+                <th class="text-end">Start Time</th>
+                <th class="text-end">End Date</th>
+                <th class="text-end">End Time</th>
+                <th class="text-end">Venue</th>
+                <th class="text-end">Other Details</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for unlisted_parties in unlisted_parties %}
+            <tr>
+                <td class="text-start">{{ unlisted_parties.party_name }}</td>
+                <td class="text-end">{{ unlisted_parties.start_date }}</td>
+                <td class="text-end">{{ unlisted_parties.start_time }}</td>
+                <td class="text-end">{{ unlisted_parties.end_date }}</td>
+                <td class="text-end">{{ unlisted_parties.end_time }}</td>
+                <td class="text-end">{{ unlisted_parties.venue }}</td>
+                <td class="text-end">{{ unlisted_parties.other_details }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+<br>
+    <p class="smalltext">FOR INVITED PARTIES ONLY: Be careful, once you enter a party, your invitation will be used, and it cannot be used again.</p>
+    <form action="/partyerhome" method="post">
+        <div class="mb-3">
+            <select class="form-select mx-auto w-auto" name="selected_party" value=select>
+                <option disabled selected>Select a Party</option>
+                {% for i in range (0, length) %}
+                <option name="selected_party" select>
+                {{party_list[i]}}
+                </option>
+                {% endfor %}
+            </select>
+            <br>
+            <button class="btn btn-primary" type="submit">Enter!</button>
+    </form>
+<br>
+
+    </main>
+</body>
+
+{% endblock %}

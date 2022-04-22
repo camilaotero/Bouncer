@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <B class="title">WELCOME TO BOUNCER</B>
+    {% if not session["hostusers_id"] or not session["partyerusers_id"] %}
+        <p class="text">Please login or register if you're new!</p>
+    {% endif %}
+    <img class="img" src="/static/bouncer.jpg" alt="Bouncer">
+{% endblock %}
